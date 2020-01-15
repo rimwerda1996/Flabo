@@ -1,0 +1,143 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title"></h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+          
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Ajouter Etudiant</h4>
+                     
+                  </div>
+                  <div class="card-body">
+                          <form #Form="ngForm" (ngSubmit)="save(Form)">
+                                  <div class="row">
+        
+                                    
+                                      <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                           
+                                            <input matInput placeholder="Email address" type="email" name="email"  [(ngModel)]="email"> 
+                                          </mat-form-field>
+                                      </div>
+                                      
+                                          <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="CIN" type="text" name="cin"  [(ngModel)]="cin">
+                                            </mat-form-field>
+                                          </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Fist Name" type="text" name="prenom"  [(ngModel)]="prenom">
+                                        </mat-form-field>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="Last Name" type="text" name="nom"  [(ngModel)]="nom">
+                                        </mat-form-field>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                    <div class="col-md-6">
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="diplome" type="text" name="diplome"  [(ngModel)]="diplome">
+                                      </mat-form-field>
+                                    </div>
+                                    <div class="col-md-6">
+                                      <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="dateInscription" type="date" name="dateInscription"  [(ngModel)]="dateInscription">
+                                      </mat-form-field>
+                                    </div>
+                                </div>
+                                
+                                  
+                              </form> </div>
+                          </div>
+                     <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="save(Form)">Save</button>
+              </div>
+            </ng-template>
+            
+
+
+
+
+
+
+<div class="main-content">
+<div class="container-fluid">
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-danger">
+                <h4 class="card-title "> liste des etudiant </h4>
+                
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class=" text-primary">
+                           
+                            <th>
+                               nom
+                            </th>
+                           <th>
+                               prenom 
+                           </th>
+                           <th>
+                                 cin
+                              </th>
+                             
+                              
+                                <th>
+                                  email
+                                  </th>
+                                  <th>
+                                    diplome
+                                    </th>
+                                    <th>
+                                      dateInscription
+                                      </th>
+                                      <th>
+                                        nom enseignant
+                                        </th>
+
+                              <th>
+                                supprimer
+                             </th>
+                             
+                             <th>
+                              modifier
+                           </th>
+                           <th><button class="btn" (click)="open(content)"><i class="fa fa-plus"></i> </button></th>
+                        </thead>
+                        <tbody>
+                            
+                              <tr *ngFor="let row of tabStag">
+                      
+                                  
+                                  <td>{{row.nom}}</td>
+                                  <td>{{row.prenom}}</td>
+                                  
+                                  <td>{{row.cin}}</td>
+                                  <td>{{row.email}}</td>
+                                  <td>{{row.diplome}}</td>
+                                  <td>{{row.dateInscription}}</td>
+                                  <td>{{row.enseignant.prenom}}</td>
+                                  
+                                  <td><button class="btn" (click)="deleteRes(row.id)"><i class="fa fa-trash"></i></button></td>
+                                  <td><button class="btn" (click)="update(row.id)"><i class="fa fa-edit"></i></button></td>
+                                  
+                              </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    

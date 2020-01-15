@@ -1,0 +1,64 @@
+<div class="main-content">
+  <div class="container-fluid">
+     
+          
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit Profile</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body">
+                      <form #stagiaireForm="ngForm" (ngSubmit)="update(stagiaireForm)">
+                          <div class="row">
+
+                            
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                   
+                                    <input matInput placeholder="Email address" type="email" name="email"  [(ngModel)]="email"> 
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                 
+                                  <input matInput placeholder="CIN" type="text" name="cin"  [(ngModel)]="cin"> 
+                                </mat-form-field>
+                            </div>
+
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Fist Name" type="text" name="prenom"  [(ngModel)]="prenom">
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Last Name" type="text" name="nom"  [(ngModel)]="nom">
+                                </mat-form-field>
+                              </div>
+                             
+                          </div>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="grade" type="text" name="diplome"  [(ngModel)]="diplome">
+                              </mat-form-field>
+                            </div>
+                            <div class="col-md-6">
+                              <mat-form-field class="example-full-width">
+                                <input matInput placeholder="etablissement" type="date" name="dateInscription"  [(ngModel)]="dateInscription">
+                              </mat-form-field>
+                            </div>
+                        </div>
+                              
+                   
+                          <button type="button" class="btn btn-outline-dark" (click)="update(stagiaireForm)" >Save</button>
+                        
+                      </form>
+
+                  </div>
+              </div>
+          </div>
+    
+</div>

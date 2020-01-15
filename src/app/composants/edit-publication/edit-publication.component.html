@@ -1,0 +1,53 @@
+<div class="main-content">
+  <div class="container-fluid">
+     
+          
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Edit Profile</h4>
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body">
+                      <form #stagiaireForm="ngForm" (ngSubmit)="update(stagiaireForm)">
+                          <div class="row">
+
+                            
+                              <div class="col-md-6">
+                                  <mat-form-field class="example-full-width">
+                                   
+                                    <input matInput placeholder="type" type="text" name="type"  [(ngModel)]="type"> 
+                                  </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                 
+                                  <input matInput placeholder="lien" type="text" name="lien"  [(ngModel)]="lien"> 
+                                </mat-form-field>
+                            </div>
+
+                          </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="source" type="text" name="source"  [(ngModel)]="source">
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="date" type="date" name="date"  [(ngModel)]="date">
+                                </mat-form-field>
+                              </div>
+                             
+                          </div>
+                         
+                              
+                   
+                          <button type="button" class="btn btn-outline-dark" (click)="update(stagiaireForm)" >Save</button>
+                        
+                      </form>
+
+                  </div>
+              </div>
+          </div>
+    
+</div>

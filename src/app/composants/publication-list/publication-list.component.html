@@ -1,0 +1,119 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title"></h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+          
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Ajouter Publication</h4>
+                     
+                  </div>
+                  <div class="card-body">
+                          <form #Form="ngForm" (ngSubmit)="save(Form)">
+                                  <div class="row">
+        
+                                    
+                                      <div class="col-md-6">
+                                          <mat-form-field class="example-full-width">
+                                           
+                                            <input matInput placeholder="source" type="email" name="source"  [(ngModel)]="sourcepdf"> 
+                                          </mat-form-field>
+                                      </div>
+                                      
+                                          <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                              <input matInput placeholder="lien" type="text" name="lien"  [(ngModel)]="lien">
+                                            </mat-form-field>
+                                          </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="type" type="text" name="type"  [(ngModel)]="type">
+                                        </mat-form-field>
+                                      </div>
+                                      <div class="col-md-6">
+                                        <mat-form-field class="example-full-width">
+                                          <input matInput placeholder="date" type="date" name="date"  [(ngModel)]="date">
+                                        </mat-form-field>
+                                      </div>
+                                  </div>
+                                  
+                                
+                                  
+                              </form> </div>
+                          </div>
+                     <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="save(Form)">Save</button>
+              </div>
+            </ng-template>
+            
+
+
+ 
+
+
+
+<div class="main-content">
+  <div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card">
+              <div class="card-header card-header-danger">
+                  <h4 class="card-title "> liste des publications </h4>
+                  
+              </div>
+              <div class="card-body">
+                  <div class="table-responsive">
+                      <table class="table">
+                          <thead class=" text-primary">
+                             
+                              <th>
+                                 type
+                              </th>
+                             <th>
+                                 lien
+                             </th>
+                             <th>
+                                   date
+                                </th>
+                                <th>
+                                source
+                                </th>
+                                <th>
+                                  supprimer
+                               </th>
+                               
+                               <th>
+                                modifier
+                             </th>
+                             
+                             <th><button class="btn" (click)="open(content)"><i class="fa fa-plus"></i> </button></th>
+
+                          </thead>
+                          <tbody>
+                              
+                                <tr *ngFor="let row of tabStag">
+                        
+                                    
+                                    <td>{{row.type}}</td>
+                                    <td>{{row.lien}}</td>
+                                    
+                                    <td>{{row.date}}</td>
+                                    <td>{{row.sourcepdf}}</td>
+                                    
+                                    <td><button class="btn" (click)="deleteRes(row.id)"><i class="fa fa-trash"></i></button></td>
+                                    <td><button class="btn" (click)="update(row.id)"><i class="fa fa-edit"></i></button></td>
+                                </tr>
+                              
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
+      </div>
+      
+  
